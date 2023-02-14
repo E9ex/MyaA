@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Gamemanager : MonoBehaviour
 {
@@ -19,6 +20,11 @@ public class Gamemanager : MonoBehaviour
         _spawner.enabled = false;
         animator.SetTrigger("EndGame");
         gameHasended = true;
+    }
+
+    public void RestartLevel()//bunu animator kısmından active yaptık.Coroutine da yaparak kullanabiliriz.
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     
 }
